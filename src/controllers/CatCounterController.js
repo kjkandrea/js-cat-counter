@@ -8,22 +8,25 @@ const catListEL = document.getElementById('cat-list')
 
 const controller = {
   views: {
-    counter: null
+    counter: null,
+    catList: null
   },
   init() {
     this.views.counter = counter.init(counterEl, count.value)
       .on('@count:increment', () => this.increment())
       .on('@count:decrement', () => this.decrement())
 
-    catList.init(catListEL, count.value)
+    this.catList = catList.init(catListEL, count.value)
   },
   increment() {
     count.increment()
     this.views.counter.setCount(count.value)
+    this.catList.setCats(count.value)
   },
   decrement() {
     count.decrement()
     this.views.counter.setCount(count.value)
+    this.catList.setCats(count.value)
   }
 }
 

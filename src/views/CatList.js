@@ -5,9 +5,12 @@ class CatList extends View {
     this._el = el
 
     this.setCats(count)
+
+    return this
   }
 
   setCats (count) {
+    this._el.innerHTML = ''
     for (let i = 0; i < count ; i++) this._el.append(this.cat)
   }
 
