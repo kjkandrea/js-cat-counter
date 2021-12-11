@@ -1,6 +1,10 @@
+import counter from '../views/Counter.js'
+
+const counterEl = document.getElementById('counter')
+
 const controller = {
   run() {
-    console.log('running!')
+    counter.init(counterEl)
   }
 }
 
