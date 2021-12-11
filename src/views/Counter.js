@@ -2,8 +2,8 @@ class Counter {
   init (el, count) {
     this._el = el
     this._events = {
-      '@count:increment': [() => console.log('increment')],
-      '@count:decrement': [() => console.log('decrement')],
+      '@count:increment': () => console.log('increment'),
+      '@count:decrement': () => console.log('decrement')
     }
 
     this.setCount(count)
@@ -22,7 +22,7 @@ class Counter {
   }
 
   emit (eventName) {
-    this._events[eventName].forEach(fn => fn())
+    this._events[eventName]?.()
   }
 }
 
