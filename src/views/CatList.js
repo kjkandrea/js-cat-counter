@@ -10,8 +10,9 @@ class CatList extends View {
   }
 
   setCats (count) {
-    this._el.innerHTML = ''
-    for (let i = 0; i < count ; i++) this._el.append(this.cat)
+    const appendCount = count - this._el.children.length;
+    if (appendCount >= 1) for (let i = 0; i < appendCount ; i++) this._el.append(this.cat)
+    else for (let i = 0; i > appendCount ; i--) this._el.lastChild.remove()
   }
 
   get cat () {
