@@ -19,12 +19,12 @@ const controller = {
     this.catList = catList.init(catListEL, count.value)
   },
   increment() {
-    count.increment(3)
+    count.increment()
     this.views.counter.setCount(count.value)
     this.catList.setCats(count.value)
   },
   decrement() {
-    count.decrement(3)
+    count.decrement()
     this.views.counter.setCount(count.value)
     this.catList.setCats(count.value)
   }
