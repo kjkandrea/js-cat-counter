@@ -5,10 +5,11 @@ const counterEl = document.getElementById('counter')
 
 const controller = {
   run() {
-    counter.init(counterEl)
-
     count.increment()
-    console.log(count.value)
+    count.increment()
+    count.increment()
+
+    counter.init(counterEl, count.value)
   }
 }
 

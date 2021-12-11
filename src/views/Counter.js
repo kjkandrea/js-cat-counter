@@ -1,10 +1,14 @@
 class Counter {
-  init (el) {
+  init (el, count) {
     this._el = el
 
+    this.setCount(count)
     this.attachEvents()
   }
 
+  setCount(count) {
+    this._el.children.counter.value = count
+  }
 
   attachEvents () {
     const increment = this._el.children.increment
@@ -19,7 +23,7 @@ class Counter {
   }
 
   decrement(inputEl) {
-    inputEl.value = Number(inputEl.value) - 1
+    if (inputEl.value >= 1) inputEl.value = Number(inputEl.value) - 1
   }
 }
 
