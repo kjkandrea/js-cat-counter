@@ -1,13 +1,13 @@
 const count = {
-  _value: 1,
+  _value: 10,
   get value() {
     return this._value
   },
-  increment() {
-    this._value++
+  increment(aCount) {
+    this._value = this._value + aCount
   },
-  decrement() {
-    this._value >= 1 && this._value--
+  decrement(aCount) {
+    this._value >= aCount ? this._value = this._value - aCount : this._value = 0;
   }
 }
 
