@@ -5,11 +5,9 @@ const counterEl = document.getElementById('counter')
 
 const controller = {
   run() {
-    count.increment()
-    count.increment()
-    count.increment()
-
     counter.init(counterEl, count.value)
+      .on('@count:increment', () => console.log('increment'))
+      .on('@count:decrement', () => console.log('decrement'))
   }
 }
 
