@@ -8,7 +8,13 @@ class CatList extends View {
   }
 
   setCats (count) {
-    console.log(count)
+    for (let i = 0; i < count ; i++) this._el.append(this.cat)
+  }
+
+  get cat () {
+    const li = document.createElement('li')
+    li.textContent = '🐈'
+    return li
   }
 }
 
