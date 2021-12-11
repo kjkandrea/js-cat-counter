@@ -3,21 +3,23 @@ class Counter {
     this._el = el
 
     this.attachEvents()
-    console.log(this._el)
   }
+
 
   attachEvents () {
-    const [incrementEl, decrementEl] = this._el.querySelectorAll('button')
-    incrementEl.addEventListener('click', () => this.increment())
-    decrementEl.addEventListener('click', () => this.decrement())
+    const increment = this._el.children.increment
+    const decrement = this._el.children.decrement
+    const counter = this._el.children.counter
+    increment.addEventListener('click', () => this.increment(counter))
+    decrement.addEventListener('click', () => this.decrement(counter))
   }
 
-  increment() {
-    console.log('+')
+  increment(inputEl) {
+    inputEl.value = Number(inputEl.value) + 1
   }
 
-  decrement() {
-    console.log('-')
+  decrement(inputEl) {
+    inputEl.value = Number(inputEl.value) - 1
   }
 }
 
