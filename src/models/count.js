@@ -1,5 +1,5 @@
 const count = {
-  _value: 0,
+  _value: 1,
   get value() {
     return this._value
   },
