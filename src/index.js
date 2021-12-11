@@ -1,3 +1,3 @@
 import CatCounterController from './controllers/CatCounterController.js'
 
-document.addEventListener('DOMContentLoaded', () => CatCounterController.run())
+document.addEventListener('DOMContentLoaded', () => CatCounterController.init())

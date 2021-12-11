@@ -4,10 +4,21 @@ import count from '../models/count.js'
 const counterEl = document.getElementById('counter')
 
 const controller = {
-  run() {
-    counter.init(counterEl, count.value)
-      .on('@count:increment', () => console.log('increment'))
-      .on('@count:decrement', () => console.log('decrement'))
+  views: {
+    counter: null
+  },
+  init() {
+    this.views.counter = counter.init(counterEl, count.value)
+      .on('@count:increment', () => this.increment())
+      .on('@count:decrement', () => this.decrement())
+  },
+  increment() {
+    count.increment()
+    this.views.counter.setCount(count.value)
+  },
+  decrement() {
+    count.decrement()
+    this.views.counter.setCount(count.value)
   }
 }
 
