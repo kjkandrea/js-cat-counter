@@ -3,5 +3,7 @@ console.log('Hello, Svelte!')
 </script>
 
 <div>
-    <h1>Hello, Svelte</h1>
+    <button>+</button>
+    <input type="number" readonly />
+    <button>_</button>
 </div>
