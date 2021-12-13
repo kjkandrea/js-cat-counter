@@ -1,6 +1,4 @@
 <script>
-    import CatList from './CatList.svelte'
-
     export let count;
     export let increment
     export let decrement
