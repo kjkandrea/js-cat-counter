@@ -1,10 +1,7 @@
 <script>
-    import { count } from '../store/count.js';
+    import { count, increment, decrement } from '../store/count.js';
     import CatList from './presentations/CatList.svelte'
     import Counter from './presentations/Counter.svelte'
-
-    const increment = () => count.update(count => ++count)
-    const decrement = () => count.update(count => count >= 1 ? --count : count)
 </script>
 
 <div>
