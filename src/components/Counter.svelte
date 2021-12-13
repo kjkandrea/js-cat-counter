@@ -1,12 +1,15 @@
 <script>
-let count = 0;
+    import CatList from './CatList.svelte'
 
-const increment = () => count++
-const decrement = () => count >= 1 && count--
+    let count = 0
+
+    const increment = () => count++
+    const decrement = () => count >= 1 && count--
 </script>
 
 <div>
     <button on:click={increment}>+</button>
-    <input type="number" readonly value={count} />
+    <input type="number" readonly value={count}/>
     <button on:click={decrement}>_</button>
+    <CatList count={count} />
 </div>
