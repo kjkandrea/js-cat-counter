@@ -1,9 +1,12 @@
 <script>
-console.log('Hello, Svelte!')
+let count = 0;
+
+const increment = () => count++
+const decrement = () => count >= 1 && count--
 </script>
 
 <div>
-    <button>+</button>
-    <input type="number" readonly />
-    <button>_</button>
+    <button on:click={increment}>+</button>
+    <input type="number" readonly value={count} />
+    <button on:click={decrement}>_</button>
 </div>
